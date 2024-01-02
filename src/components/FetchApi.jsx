@@ -9,10 +9,14 @@ const FetchApi = () => {
     fetch("https://api.ts4u.us/api/course/get?type=program")
     .then((Response) => Response.json())
     .then((data) => setState(data.courses))
+
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
   }, [])
 
   return (
-    <div className='courseSection'>
+    <div className='container'>
         <h1 className='courseSection-heading'>TS4U Provide a Variety of <br></br>
         Software Development Courses </h1>
 
